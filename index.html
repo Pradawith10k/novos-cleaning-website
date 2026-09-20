@@ -230,18 +230,6 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
 .trust-pill strong { font-weight: 700; color: var(--lime); }
 .trust-sep { width: 4px; height: 4px; border-radius: 50%; background: rgba(245,245,240,0.2); }
 
-/* HOLIDAY */
-#holiday { background: #08120c; padding: 110px 0; position: relative; overflow: hidden; border-top: 1px solid #14261a; }
-#holiday::before { content:''; position:absolute; inset:0; background: radial-gradient(900px 400px at 50% 0%, rgba(200,244,0,0.07), transparent 70%); pointer-events:none; }
-.holiday-inner { max-width: 900px; margin: 0 auto; padding: 0 48px; text-align: center; position: relative; }
-.holiday-eyebrow { display:inline-flex; align-items:center; gap:9px; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lime); border: 1px solid rgba(200,244,0,0.3); padding: 8px 18px; border-radius: 100px; margin-bottom: 26px; }
-.holiday-title { font-family: var(--font-display); font-size: clamp(46px, 6vw, 88px); line-height: 0.96; letter-spacing: 0.02em; color: var(--white); }
-.holiday-sub { font-size: 17px; font-weight: 300; line-height: 1.65; color: rgba(245,245,240,0.6); margin: 20px auto 36px; max-width: 620px; }
-.holiday-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
-.holiday-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; margin-top: 34px; font-size: 13px; font-weight: 400; color: rgba(245,245,240,0.45); letter-spacing: 0.04em; }
-.holiday-features span { display: flex; align-items: center; gap: 26px; }
-.holiday-features span::after { content:''; width:3px; height:3px; border-radius:50%; background: var(--lime); opacity:0.5; }
-.holiday-features span:last-child::after { display: none; }
 
 /* STICKY MOBILE BAR */
 .sticky-bar { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 900; background: rgba(13,13,13,0.97); backdrop-filter: blur(16px); border-top: 1px solid rgba(245,245,240,0.1); padding: 12px 14px calc(12px + env(safe-area-inset-bottom)); gap: 10px; }
@@ -292,11 +280,36 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
 .footer-legal-links { display: flex; gap: 20px; }
 .footer-legal-links a { font-size: 11px; font-weight: 300; color: var(--white); text-decoration: none; opacity: 0.5; letter-spacing: 0.05em; transition: opacity 0.2s; }
 .footer-legal-links a:hover { opacity: 1; }
-@media (max-width: 860px) { .footer-bottom { flex-direction: column; align-items: flex-start; gap: 18px; } #holiday { padding: 80px 0; } .holiday-inner { padding: 0 24px; } }
+@media (max-width: 860px) { .footer-bottom { flex-direction: column; align-items: flex-start; gap: 18px; } }
 
 /* FADE UP */
 .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* MOBILE MENU */
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-toggle { display: none; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(245,245,240,0.25); background: rgba(13,13,13,0.6); cursor: pointer; align-items: center; justify-content: center; flex-direction: column; gap: 5px; padding: 0; }
+.nav-toggle span { display: block; width: 18px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.25s, opacity 0.2s; }
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 99; background: rgba(13,13,13,0.98); backdrop-filter: blur(16px); padding: 92px 24px 28px; border-bottom: 1px solid rgba(255,255,255,0.08); max-height: 100vh; overflow-y: auto; transform: translateY(-105%); transition: transform 0.3s ease; }
+.mobile-menu.open { transform: translateY(0); }
+.mobile-menu a { display: block; font-family: var(--font-display); font-size: 30px; letter-spacing: 0.04em; color: var(--white); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(245,245,240,0.08); }
+.mobile-menu a.sub { font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; padding: 10px 0 10px 16px; }
+.mobile-menu a.hl { color: var(--lime); }
+.mobile-menu .mm-call { margin-top: 18px; text-align: center; font-family: var(--font-body); font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--lime); color: var(--black); border-radius: 100px; padding: 16px; border: none; }
+@media (max-width: 860px) { .nav-toggle { display: flex; flex-shrink: 0; } .mobile-menu { display: block; } .nav-right { flex-shrink: 0; } .nav-links a.nav-cta { white-space: nowrap; padding: 9px 16px; font-size: 12px; } .nav-logo img { height: 44px; } }
+
+/* HERO COMPACT + MONTY RIGHT */
+#hero { min-height: min(720px, 100svh); justify-content: flex-start; padding-top: 130px; padding-bottom: 0; }
+.hero-content { flex: 0 0 auto; padding-bottom: 90px; position: relative; z-index: 2; }
+.hero-gecko { position: absolute; right: 3%; bottom: 0; width: clamp(340px, 40vw, 600px); margin: 0; align-self: auto; z-index: 1; }
+@media (max-width: 860px) {
+  #hero { min-height: auto; padding: 96px 20px 0; }
+  .hero-content { padding-bottom: 0; }
+  .hero-gecko { position: relative; right: auto; bottom: auto; width: min(64vw, 280px); align-self: flex-end; margin: -6px -6px 0 0; }
+}
 </style>
 </head>
 <body>
@@ -306,6 +319,7 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
   <a href="/" class="nav-logo">
     <img src="website-logo.png" alt="Novo's Cleaning" />
   </a>
+  <div class="nav-right">
   <ul class="nav-links">
     <li class="nav-dropdown">
       <a href="#services">Services</a>
@@ -319,9 +333,23 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="/christmas-lights.html">Holiday Lights</a></li>
-    <li><a href="/book" class="nav-cta" id="navBookBtn">Book Now</a></li>
+    <li><a href="/book" class="nav-cta" id="navBookBtn">Get a Quote</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a class="sub" href="/standard-cleaning">Standard Cleaning</a>
+  <a class="sub" href="/deep-cleaning">Deep Cleaning</a>
+  <a class="sub" href="/move-out-cleaning">Move-Out Cleaning</a>
+  <a href="#work">Our Work</a>
+  <a href="#faq">FAQ</a>
+  <a href="#reviews">Reviews</a>
+  <a class="hl" href="/christmas-lights.html">Holiday Lights</a>
+  <a class="mm-call" href="tel:3174890644">Call 317-489-0644</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -329,10 +357,9 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
   <div class="hero-content">
     <p class="hero-eyebrow">Indianapolis &amp; Surrounding Areas</p>
     <h1 class="hero-headline">WE MAKE IT<br /><span class="lime">NOVO.</span></h1>
-    <p class="hero-sub">Top-quality house cleaning across Indianapolis and surrounding areas. Cleaner spaces. Fresher homes. Reliable service built around quality, care, and consistency.</p>
+    <p class="hero-sub">Top-quality house cleaning across Indianapolis and surrounding areas. Cleaner spaces.</p>
     <div class="hero-cta-row">
-      <a href="/book" class="btn-primary" id="heroBookBtn">Book Now</a>
-      <a href="/book" class="btn-ghost" id="heroQuoteBtn">Get My Quote</a>
+      <a href="/book" class="btn-primary" id="heroBookBtn">Get a Quote</a>
     </div>
   </div>
   <img src="novos cleaning mascot/20.png" alt="Novo's mascot peeking" class="hero-gecko" />
@@ -440,7 +467,7 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
           <li>Dusting all surfaces</li>
           <li>Trash removal</li>
         </ul>
-        <a href="/book" class="service-cta">Book now →</a>
+        <a href="/book" class="service-cta">Get a quote →</a>
       </div>
     </div>
     <div class="service-card" id="svc2">
@@ -455,7 +482,7 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
           <li>Window sills &amp; blinds</li>
           <li>Cabinet interiors</li>
         </ul>
-        <a href="/book" class="service-cta">Book now →</a>
+        <a href="/book" class="service-cta">Get a quote →</a>
       </div>
     </div>
     <div class="service-card" id="svc3">
@@ -470,7 +497,7 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
           <li>Garage sweep</li>
           <li>Deposit-ready finish</li>
         </ul>
-        <a href="/book" class="service-cta">Book now →</a>
+        <a href="/book" class="service-cta">Get a quote →</a>
       </div>
     </div>
   </div>
@@ -604,27 +631,11 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
         </div>
       </div>
       <div class="trust-cta fade-up" style="transition-delay:0.3s">
-        <a href="/book" class="btn-dark" id="trustBookBtn">Book Now</a>
+        <a href="/book" class="btn-dark" id="trustBookBtn">Get a Quote</a>
       </div>
     </div>
     <div>
       <img src="novos cleaning mascot/18.png" alt="Novo's mascot scrubbing" class="trust-gecko" loading="lazy" />
-    </div>
-  </div>
-</section>
-
-<!-- HOLIDAY LIGHTS -->
-<section id="holiday">
-  <div class="holiday-inner">
-    <span class="holiday-eyebrow">🎄 Novo's Holiday Lights</span>
-    <h2 class="holiday-title fade-up">WE MAKE<br />CHRISTMAS NOVO.</h2>
-    <p class="holiday-sub fade-up">Custom Christmas light installation across Indianapolis and surrounding areas. From design and installation to maintenance, takedown, and storage — Novo's handles it all.</p>
-    <div class="holiday-cta fade-up">
-      <a href="/christmas-lights.html" class="btn-primary">Explore Holiday Lighting</a>
-      <a href="/christmas-lights.html#quote" class="btn-ghost">Get a Free Quote</a>
-    </div>
-    <div class="holiday-features fade-up">
-      <span>Custom-Cut Lights</span><span>Professional C9 LEDs</span><span>Maintenance</span><span>Takedown</span><span>Storage</span>
     </div>
   </div>
 </section>
@@ -799,12 +810,22 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   fadeEls.forEach(el => obs.observe(el));
+
+// Mobile menu
+(function(){
+  var t=document.getElementById('navToggle'), m=document.getElementById('mobileMenu');
+  if(!t||!m) return;
+  function set(o){ t.classList.toggle('open',o); m.classList.toggle('open',o); t.setAttribute('aria-expanded',o); }
+  t.addEventListener('click',function(){ set(!m.classList.contains('open')); });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ set(false); }); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+})();
 </script>
 
 <!-- STICKY MOBILE BAR -->
 <div class="sticky-bar">
   <a href="tel:3174890644" class="sticky-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
-  <a href="/book" class="sticky-quote" id="stickyQuoteBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Get My Quote</a>
+  <a href="/book" class="sticky-quote" id="stickyQuoteBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Get a Quote</a>
 </div>
 
 </body>
