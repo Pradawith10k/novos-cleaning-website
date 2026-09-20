@@ -286,20 +286,21 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
 .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-/* MOBILE MENU */
-.nav-right { display: flex; align-items: center; gap: 12px; }
-.nav-toggle { display: none; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(245,245,240,0.25); background: rgba(13,13,13,0.6); cursor: pointer; align-items: center; justify-content: center; flex-direction: column; gap: 5px; padding: 0; }
-.nav-toggle span { display: block; width: 18px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.25s, opacity 0.2s; }
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 99; background: rgba(13,13,13,0.98); backdrop-filter: blur(16px); padding: 92px 24px 28px; border-bottom: 1px solid rgba(255,255,255,0.08); max-height: 100vh; overflow-y: auto; transform: translateY(-105%); transition: transform 0.3s ease; }
-.mobile-menu.open { transform: translateY(0); }
-.mobile-menu a { display: block; font-family: var(--font-display); font-size: 30px; letter-spacing: 0.04em; color: var(--white); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(245,245,240,0.08); }
-.mobile-menu a.sub { font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; padding: 10px 0 10px 16px; }
-.mobile-menu a.hl { color: var(--lime); }
-.mobile-menu .mm-call { margin-top: 18px; text-align: center; font-family: var(--font-body); font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--lime); color: var(--black); border-radius: 100px; padding: 16px; border: none; }
-@media (max-width: 860px) { .nav-toggle { display: flex; flex-shrink: 0; } .mobile-menu { display: block; } .nav-right { flex-shrink: 0; } .nav-links a.nav-cta { white-space: nowrap; padding: 9px 16px; font-size: 12px; } .nav-logo img { height: 44px; } }
+
+/* MOBILE HEADER LINKS (always visible, no hamburger) */
+.nav-strip { display: none; }
+@media (max-width: 860px) {
+  nav { flex-wrap: wrap; row-gap: 6px; padding: 12px 16px 10px; }
+  .nav-right { flex-shrink: 0; }
+  .nav-links a.nav-cta { white-space: nowrap; padding: 9px 16px; font-size: 12px; }
+  .nav-logo img { height: 44px; }
+  .nav-strip { display: flex; flex: 0 0 100%; gap: 12px; justify-content: space-between; overflow-x: auto; white-space: nowrap; padding: 4px 2px 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .nav-strip::-webkit-scrollbar { display: none; }
+  .nav-strip a { font-size: clamp(10px, 2.85vw, 12px); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); text-decoration: none; opacity: 0.75; flex-shrink: 0; }
+  .nav-strip a.hl { color: var(--lime); opacity: 1; }
+}
+@media (max-width: 860px) { #hero { padding-top: 124px !important; } }
+
 
 /* HERO COMPACT + MONTY RIGHT */
 #hero { min-height: min(720px, 100svh); justify-content: flex-start; padding-top: 130px; padding-bottom: 0; }
@@ -335,21 +336,15 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
     <li><a href="/christmas-lights.html">Holiday Lights</a></li>
     <li><a href="/book" class="nav-cta" id="navBookBtn">Get a Quote</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-strip">
+    <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#faq">FAQ</a>
+    <a href="#reviews">Reviews</a>
+    <a class="hl" href="/christmas-lights.html">Holiday Lights</a>
   </div>
 </nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#services">Services</a>
-  <a class="sub" href="/standard-cleaning">Standard Cleaning</a>
-  <a class="sub" href="/deep-cleaning">Deep Cleaning</a>
-  <a class="sub" href="/move-out-cleaning">Move-Out Cleaning</a>
-  <a href="#work">Our Work</a>
-  <a href="#faq">FAQ</a>
-  <a href="#reviews">Reviews</a>
-  <a class="hl" href="/christmas-lights.html">Holiday Lights</a>
-  <a class="mm-call" href="tel:3174890644">Call 317-489-0644</a>
-</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -811,15 +806,6 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
   }, { threshold: 0.1 });
   fadeEls.forEach(el => obs.observe(el));
 
-// Mobile menu
-(function(){
-  var t=document.getElementById('navToggle'), m=document.getElementById('mobileMenu');
-  if(!t||!m) return;
-  function set(o){ t.classList.toggle('open',o); m.classList.toggle('open',o); t.setAttribute('aria-expanded',o); }
-  t.addEventListener('click',function(){ set(!m.classList.contains('open')); });
-  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ set(false); }); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
-})();
 </script>
 
 <!-- STICKY MOBILE BAR -->
