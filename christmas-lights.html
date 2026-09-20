@@ -62,7 +62,7 @@ nav.scrolled{background:rgba(13,13,13,.95);backdrop-filter:blur(12px);border-bot
 .bulb:nth-child(3n+3){--b:#FF6F5E;--d:2.2s}
 
 #hero{min-height:90svh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:160px 48px 90px;position:relative;overflow:hidden;background:#08120c}
-#hero::after{content:'';position:absolute;inset:0;background-image:url('christmas-lights-estate.webp');background-size:cover;background-position:center;z-index:0}
+#hero::after{content:'';position:absolute;inset:0;background-image:url('christmas-lights-estate-sm.webp');background-size:cover;background-position:center;z-index:0}
 #hero::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(6,14,9,.93) 0%,rgba(6,14,9,.88) 34%,rgba(6,14,9,.74) 62%,rgba(6,14,9,.66) 100%)}
 .hero-in{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2}
 .hero-gecko{position:absolute;right:2%;bottom:-2%;width:clamp(340px,36vw,620px);z-index:2;pointer-events:none;filter:drop-shadow(0 26px 46px rgba(0,0,0,.55));animation:float 7s ease-in-out infinite}
@@ -194,6 +194,8 @@ footer{background:var(--black);padding:70px 0 40px;border-top:1px solid #181818}
   .garland{height:52px}.bulb{width:9px;flex:0 0 9px}.bulb::after{width:9px;height:12px}
 }
 
+@media (max-width:860px){.hero-gecko{filter:none!important}}
+.gal-item img{content-visibility:auto}
 
 /* SMOOTH SCROLL: drop costly blur layers */
 nav.scrolled{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(13,13,13,.97)!important}
@@ -257,7 +259,7 @@ html,body{max-width:100%;overflow-x:clip}
 
 <section id="hero">
   <div class="garland" aria-hidden="true"><div class="garland-wire" id="garlandWire"></div></div>
-  <img src="christmas-lights-santa-gecko.webp" alt="Novo's mascot in a Santa hat peeking" class="hero-gecko" />
+  <img src="christmas-lights-santa-gecko-sm.webp" alt="Novo's mascot in a Santa hat peeking" class="hero-gecko" />
   <div class="hero-in">
     <span class="hero-eyebrow">🎄 Novo's Holiday Lights</span>
     <h1>WE MAKE<br /><span class="lime">CHRISTMAS NOVO.</span></h1>
@@ -302,10 +304,10 @@ html,body{max-width:100%;overflow-x:clip}
     <p class="label fade-up">Our Installs</p>
     <h2 class="title fade-up">AFTER DARK.</h2>
     <div class="gal-grid">
-      <div class="gal-item fade-up"><img loading="lazy" src="christmas-lights-estate.webp" alt="Estate home with warm white roofline lighting, wreaths, and lit walkway" /><span class="gal-cap">Rooflines, wreaths &amp; walkway</span></div>
-      <div class="gal-item fade-up"><img loading="lazy" src="christmas-lights-wreaths.webp" alt="Brick home with lit wreaths, door garland, and net-lit bushes in snow" /><span class="gal-cap">Wreaths, garland &amp; bushes</span></div>
-      <div class="gal-item fade-up"><img loading="lazy" src="christmas-lights-trees.webp" alt="Home with warm white rooflines and color-lit trees in the snow" /><span class="gal-cap">Roofline &amp; tree lighting</span></div>
-      <div class="gal-item fade-up"><img loading="lazy" src="christmas-lights-color.webp" alt="Full-color Christmas display with lit arches and yard decor" /><span class="gal-cap">Full-color displays</span></div>
+      <div class="gal-item fade-up"><img loading="lazy" src="christmas-lights-estate-sm.webp" alt="Estate home with warm white roofline lighting, wreaths, and lit walkway" /><span class="gal-cap">Rooflines, wreaths &amp; walkway</span></div>
+      <div class="gal-item fade-up"><img loading="lazy" src="christmas-lights-wreaths-sm.webp" alt="Brick home with lit wreaths, door garland, and net-lit bushes in snow" /><span class="gal-cap">Wreaths, garland &amp; bushes</span></div>
+      <div class="gal-item fade-up"><img loading="lazy" src="christmas-lights-trees-sm.webp" alt="Home with warm white rooflines and color-lit trees in the snow" /><span class="gal-cap">Roofline &amp; tree lighting</span></div>
+      <div class="gal-item fade-up"><img loading="lazy" src="christmas-lights-color-sm.webp" alt="Full-color Christmas display with lit arches and yard decor" /><span class="gal-cap">Full-color displays</span></div>
     </div>
   </div>
 </section>
