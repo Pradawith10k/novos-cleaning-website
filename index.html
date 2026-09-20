@@ -296,6 +296,18 @@ footer { background: var(--black); padding: 80px 0 40px; border-top: 1px solid #
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
 
+/* SMOOTH SCROLL: drop costly blur layers */
+nav.scrolled{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(13,13,13,.97)!important}
+.modal-overlay{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(0,0,0,.88)!important}
+.mobile-menu,.sticky-bar{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.mobile-menu:not(.open){visibility:hidden}
+.mobile-menu{transition:transform .3s ease,visibility 0s linear .3s}.mobile-menu.open{visibility:visible;transition:transform .3s ease}
+.garland,.marquee-track,.hero-gecko{will-change:transform;transform:translateZ(0)}
+.bulb::after{box-shadow:0 0 8px 1px var(--b,#FFE9B0)!important}
+@media (max-width:860px){.bulb{animation:none!important}.bulb::after{animation:none!important}}
+html{-webkit-overflow-scrolling:touch}
+body{touch-action:pan-y}
+
 /* MOBILE FIT: no sideways scroll */
 html,body{max-width:100%;overflow-x:clip}
 .work-stage{overflow:hidden}
@@ -325,7 +337,7 @@ html,body{max-width:100%;overflow-x:clip}
 <!-- NAV -->
 <nav id="mainNav">
   <a href="/" class="nav-logo">
-    <img src="website-logo.png" alt="Novo's Cleaning" />
+    <img src="website-logo-sm.png" alt="Novo's Cleaning" />
   </a>
   <div class="nav-right">
   <ul class="nav-links">
@@ -719,7 +731,7 @@ html,body{max-width:100%;overflow-x:clip}
 
   // Nav scroll
   const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+  window.addEventListener('scroll', () => { const on = window.scrollY > 60; if (on !== nav.classList.contains('scrolled')) nav.classList.toggle('scrolled', on); }, { passive: true });
 
   // Quote form (Tally) opens in a popup
   const modal = document.getElementById('bookingModal');

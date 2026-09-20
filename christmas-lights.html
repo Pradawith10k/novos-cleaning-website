@@ -195,6 +195,18 @@ footer{background:var(--black);padding:70px 0 40px;border-top:1px solid #181818}
 }
 
 
+/* SMOOTH SCROLL: drop costly blur layers */
+nav.scrolled{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(13,13,13,.97)!important}
+.modal-overlay{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(0,0,0,.88)!important}
+.mobile-menu,.sticky-bar{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.mobile-menu:not(.open){visibility:hidden}
+.mobile-menu{transition:transform .3s ease,visibility 0s linear .3s}.mobile-menu.open{visibility:visible;transition:transform .3s ease}
+.garland,.marquee-track,.hero-gecko{will-change:transform;transform:translateZ(0)}
+.bulb::after{box-shadow:0 0 8px 1px var(--b,#FFE9B0)!important}
+@media (max-width:860px){.bulb{animation:none!important}.bulb::after{animation:none!important}}
+html{-webkit-overflow-scrolling:touch}
+body{touch-action:pan-y}
+
 /* MOBILE FIT: no sideways scroll */
 html,body{max-width:100%;overflow-x:clip}
 .work-stage{overflow:hidden}
@@ -222,7 +234,7 @@ html,body{max-width:100%;overflow-x:clip}
 <body>
 
 <nav id="mainNav">
-  <a href="/" class="nav-logo"><img src="website-logo.png" alt="Novo's Cleaning" /></a>
+  <a href="/" class="nav-logo"><img src="website-logo-sm.png" alt="Novo's Cleaning" /></a>
   <div class="nav-right">
   <ul class="nav-links">
     <li><a href="/">Cleaning</a></li>
@@ -250,7 +262,7 @@ html,body{max-width:100%;overflow-x:clip}
     <span class="hero-eyebrow">🎄 Novo's Holiday Lights</span>
     <h1>WE MAKE<br /><span class="lime">CHRISTMAS NOVO.</span></h1>
     <p class="hero-lead">Professional Christmas light installation across Indianapolis and surrounding areas.</p>
-    <p class="hero-sub">From custom-fit rooflines to walkways, wreaths, bushes, and more, Novo's handles the entire process.</p>
+    <p class="hero-sub">From custom-fit rooflines to walkways, wreaths, bushes, and more, Novo's handles the entire process — design, installation, maintenance, takedown, and storage — so you can enjoy your home without climbing a ladder.</p>
     <a href="#quote" class="btn-primary" id="heroQuote">Get a Free Quote</a>
     <div class="hero-trust">
       <span>Custom-Cut Lights</span><span>Professional C9 LEDs</span><span>Maintenance</span><span>Takedown</span><span>Storage</span>
@@ -474,7 +486,7 @@ html,body{max-width:100%;overflow-x:clip}
 })();
 
 const nav=document.getElementById('mainNav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+window.addEventListener('scroll',()=>{const on=window.scrollY>60;if(on!==nav.classList.contains('scrolled'))nav.classList.toggle('scrolled',on)},{passive:true});
 
 const modal=document.getElementById('quoteModal');
 function openModal(){modal.classList.add('open');document.body.style.overflow='hidden'}
