@@ -1,0 +1,58 @@
+# Old service-by-city pages (removed Oct 2026) -> matching city page
+/standard-cleaning-avon  /avon-house-cleaning  301
+/deep-cleaning-avon  /avon-house-cleaning  301
+/move-out-cleaning-avon  /avon-house-cleaning  301
+/standard-cleaning-bargersville  /bargersville-house-cleaning  301
+/deep-cleaning-bargersville  /bargersville-house-cleaning  301
+/move-out-cleaning-bargersville  /bargersville-house-cleaning  301
+/standard-cleaning-brownsburg  /brownsburg-house-cleaning  301
+/deep-cleaning-brownsburg  /brownsburg-house-cleaning  301
+/move-out-cleaning-brownsburg  /brownsburg-house-cleaning  301
+/standard-cleaning-carmel  /carmel-house-cleaning  301
+/deep-cleaning-carmel  /carmel-house-cleaning  301
+/move-out-cleaning-carmel  /carmel-house-cleaning  301
+/standard-cleaning-fishers  /fishers-house-cleaning  301
+/deep-cleaning-fishers  /fishers-house-cleaning  301
+/move-out-cleaning-fishers  /fishers-house-cleaning  301
+/standard-cleaning-fortville  /fortville-house-cleaning  301
+/deep-cleaning-fortville  /fortville-house-cleaning  301
+/move-out-cleaning-fortville  /fortville-house-cleaning  301
+/standard-cleaning-geist  /geist-house-cleaning  301
+/deep-cleaning-geist  /geist-house-cleaning  301
+/move-out-cleaning-geist  /geist-house-cleaning  301
+/standard-cleaning-greenfield  /greenfield-house-cleaning  301
+/deep-cleaning-greenfield  /greenfield-house-cleaning  301
+/move-out-cleaning-greenfield  /greenfield-house-cleaning  301
+/standard-cleaning-mccordsville  /mccordsville-house-cleaning  301
+/deep-cleaning-mccordsville  /mccordsville-house-cleaning  301
+/move-out-cleaning-mccordsville  /mccordsville-house-cleaning  301
+/standard-cleaning-new-palestine  /new-palestine-house-cleaning  301
+/deep-cleaning-new-palestine  /new-palestine-house-cleaning  301
+/move-out-cleaning-new-palestine  /new-palestine-house-cleaning  301
+/standard-cleaning-noblesville  /noblesville-house-cleaning  301
+/deep-cleaning-noblesville  /noblesville-house-cleaning  301
+/move-out-cleaning-noblesville  /noblesville-house-cleaning  301
+/standard-cleaning-plainfield  /plainfield-house-cleaning  301
+/deep-cleaning-plainfield  /plainfield-house-cleaning  301
+/move-out-cleaning-plainfield  /plainfield-house-cleaning  301
+/standard-cleaning-trafalgar  /trafalgar-house-cleaning  301
+/deep-cleaning-trafalgar  /trafalgar-house-cleaning  301
+/move-out-cleaning-trafalgar  /trafalgar-house-cleaning  301
+/standard-cleaning-westfield  /westfield-house-cleaning  301
+/deep-cleaning-westfield  /westfield-house-cleaning  301
+/move-out-cleaning-westfield  /westfield-house-cleaning  301
+/standard-cleaning-whitestown  /whitestown-house-cleaning  301
+/deep-cleaning-whitestown  /whitestown-house-cleaning  301
+/move-out-cleaning-whitestown  /whitestown-house-cleaning  301
+/standard-cleaning-zionsville  /zionsville-house-cleaning  301
+/deep-cleaning-zionsville  /zionsville-house-cleaning  301
+/move-out-cleaning-zionsville  /zionsville-house-cleaning  301
+
+# Old guide and area pages (removed Oct 2026)
+/areas  /  301
+/areas/*  /  301
+/guides  /  301
+/guides/*  /  301
+
+# Holiday lights pretty URL
+/christmas-lights  /christmas-lights.html  301
