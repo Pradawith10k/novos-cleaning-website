@@ -54,5 +54,6 @@
 /guides  /  301
 /guides/*  /  301
 
-# Holiday lights pretty URL
-/christmas-lights  /christmas-lights.html  301
+# Holiday lights page removed Oct 2026
+/christmas-lights  /  301
+/christmas-lights.html  /  301
