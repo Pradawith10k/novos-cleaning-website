@@ -49,6 +49,17 @@ a:focus-visible,button:focus-visible{outline:3px solid #C8F400;outline-offset:3p
 }
 @media (max-width: 480px){
   .nav-call-text{display:none}
+  .ticker{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px !important;font-size:15px !important;padding:16px !important}
+  .ticker > span{text-align:center;padding:10px 6px;border:1px solid #262626;border-radius:12px;background:#161616}
+  .ticker > span:last-child{grid-column:1 / -1}
+  .ticker > .tick-star{display:none}
+  .cta-row > a{flex:1 1 100%;justify-content:center}
+  .save-box{padding:20px !important}
+  .save-box h3{font-size:26px !important}
+  .seg-group{width:100%}
+  .seg{flex:1 1 0;padding:0 10px;font-size:12px;letter-spacing:0.06em;white-space:nowrap}
+  #rec-book{width:100%;text-align:center;padding:12px 20px !important}
+  .book-row > div{flex-basis:100% !important}
 }
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 </style>
@@ -86,7 +97,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #C8F400;outline-offset:3p
 <span style="font-family: 'Anton', 'Impact', sans-serif; font-size: clamp(56px, 7vw, 100px); line-height: 0.96; text-transform: uppercase; color: #FFFFFF">A cleaner home <span style="color: #C8F400; text-shadow: 0 0 34px rgba(200, 244, 0, 0.45)">awaits.</span></span>
 </h1>
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D4D4D4; max-width: 470px">Flat-rate house cleaning from a local, insured crew. See your estimate in 60 seconds. Deep cleans from $220.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div class="cta-row" style="display: flex; flex-wrap: wrap; gap: 12px">
 <a href="/quote.html?svc=Deep" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; padding: 0 32px; border-radius: 999px; border: none; background: #C8F400; color: #0D0D0D; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; cursor: pointer; box-shadow: 0 0 32px rgba(200, 244, 0, 0.5)">
 Book Now
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
@@ -112,11 +123,11 @@ Call Us Now
 
 <!-- TRUST TICKER -->
 <section style="border-top: 1px solid #1F1F1F; border-bottom: 1px solid #1F1F1F; background: #0D0D0D">
-<div style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 28px; font-family: 'Anton', 'Impact', sans-serif; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; color: #E8E8E8">
-<span>Fully Insured</span><span style="color: #C8F400" aria-hidden="true">✦</span>
-<span>Flat Rate Pricing</span><span style="color: #C8F400" aria-hidden="true">✦</span>
-<span>60-Second Estimate</span><span style="color: #C8F400" aria-hidden="true">✦</span>
-<span>Re-Clean Guarantee</span><span style="color: #C8F400" aria-hidden="true">✦</span>
+<div class="ticker" style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 28px; font-family: 'Anton', 'Impact', sans-serif; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; color: #E8E8E8">
+<span>Fully Insured</span><span class="tick-star" style="color: #C8F400" aria-hidden="true">✦</span>
+<span>Flat Rate Pricing</span><span class="tick-star" style="color: #C8F400" aria-hidden="true">✦</span>
+<span>60-Second Estimate</span><span class="tick-star" style="color: #C8F400" aria-hidden="true">✦</span>
+<span>Re-Clean Guarantee</span><span class="tick-star" style="color: #C8F400" aria-hidden="true">✦</span>
 <span>Local Indy Crew</span>
 </div>
 </section>
@@ -172,10 +183,10 @@ Call Us Now
 </div>
 
 <!-- SUBSCRIBE AND SAVE -->
-<div id="save" style="border-radius: 24px; border: 2px solid #C8F400; background: #161616; box-shadow: 0 0 36px rgba(200, 244, 0, 0.12); padding: 28px; display: flex; flex-direction: column; gap: 22px; scroll-margin-top: 90px">
+<div id="save" class="save-box" style="border-radius: 24px; border: 2px solid #C8F400; background: #161616; box-shadow: 0 0 36px rgba(200, 244, 0, 0.12); padding: 28px; display: flex; flex-direction: column; gap: 22px; scroll-margin-top: 90px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px">
 <h3 style="margin: 0; font-family: 'Anton', 'Impact', sans-serif; font-weight: 400; font-size: 30px; text-transform: uppercase; letter-spacing: 0.01em">Get <span style="color: #C8F400; text-shadow: 0 0 24px rgba(200, 244, 0, 0.4)">$50 credit</span> when you switch to us</h3>
-<div role="group" aria-label="Booking type" style="display: flex; gap: 6px; padding: 5px; border-radius: 999px; background: #0D0D0D; border: 1px solid #2A2A2A">
+<div role="group" aria-label="Booking type" class="seg-group" style="display: flex; gap: 6px; padding: 5px; border-radius: 999px; background: #0D0D0D; border: 1px solid #2A2A2A">
 <button type="button" class="seg" id="seg-one" aria-pressed="false">One-time</button>
 <button type="button" class="seg" id="seg-rec" aria-pressed="true">Recurring · Save</button>
 </div>
@@ -199,12 +210,12 @@ Call Us Now
 <span style="display: block; font-size: 14px; margin-top: 4px; color: #D4D4D4">back on every clean</span>
 </button>
 </div>
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px">
+<div class="book-row" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px">
 <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 420px"><span style="font-size: 18px; font-weight: 700">Your $50 lands after your first clean.</span></div>
 <a id="rec-book" href="/quote.html?freq=Biweekly" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; padding: 0 32px; border-radius: 999px; border: none; background: #C8F400; color: #0D0D0D; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; cursor: pointer; box-shadow: 0 0 28px rgba(200, 244, 0, 0.4)">Book every other week</a>
 </div>
 </div>
-<div id="one-panel" hidden style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px">
+<div id="one-panel" class="book-row cta-row" hidden style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px">
 <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 420px">
 <span style="font-size: 18px; font-weight: 700">One clean, one flat price.</span>
 <span style="font-size: 15px; line-height: 1.5; color: #BDBDBD">Want it to stay that way? Go recurring to get your $50 credit after your first clean.</span>
@@ -401,7 +412,7 @@ Call Us Now
 <div style="flex: 1 1 480px; min-width: 0; padding: 72px 0; display: flex; flex-direction: column; gap: 22px; align-self: center">
 <h2 class="big-h2" style="margin: 0; font-family: 'Anton', 'Impact', sans-serif; font-weight: 400; font-size: 84px; line-height: 0.92; text-transform: uppercase">A cleaner home<br>awaits.</h2>
 <p style="margin: 0; font-size: 18px; line-height: 1.5; color: #1F1F1F">See your price in 60 seconds. No payment, no commitment.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div class="cta-row" style="display: flex; flex-wrap: wrap; gap: 12px">
 <a href="/quote.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; padding: 0 32px; border-radius: 999px; border: none; background: #0D0D0D; color: #FFFFFF; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; cursor: pointer">
 Book Now
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
