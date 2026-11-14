@@ -1,0 +1,287 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/standard-cleaning-avon",
+      "destination": "/avon-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-avon",
+      "destination": "/avon-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-avon",
+      "destination": "/avon-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-bargersville",
+      "destination": "/bargersville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-bargersville",
+      "destination": "/bargersville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-bargersville",
+      "destination": "/bargersville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-brownsburg",
+      "destination": "/brownsburg-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-brownsburg",
+      "destination": "/brownsburg-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-brownsburg",
+      "destination": "/brownsburg-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-carmel",
+      "destination": "/carmel-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-carmel",
+      "destination": "/carmel-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-carmel",
+      "destination": "/carmel-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-fishers",
+      "destination": "/fishers-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-fishers",
+      "destination": "/fishers-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-fishers",
+      "destination": "/fishers-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-fortville",
+      "destination": "/fortville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-fortville",
+      "destination": "/fortville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-fortville",
+      "destination": "/fortville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-geist",
+      "destination": "/geist-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-geist",
+      "destination": "/geist-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-geist",
+      "destination": "/geist-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-greenfield",
+      "destination": "/greenfield-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-greenfield",
+      "destination": "/greenfield-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-greenfield",
+      "destination": "/greenfield-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-mccordsville",
+      "destination": "/mccordsville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-mccordsville",
+      "destination": "/mccordsville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-mccordsville",
+      "destination": "/mccordsville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-new-palestine",
+      "destination": "/new-palestine-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-new-palestine",
+      "destination": "/new-palestine-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-new-palestine",
+      "destination": "/new-palestine-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-noblesville",
+      "destination": "/noblesville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-noblesville",
+      "destination": "/noblesville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-noblesville",
+      "destination": "/noblesville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-plainfield",
+      "destination": "/plainfield-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-plainfield",
+      "destination": "/plainfield-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-plainfield",
+      "destination": "/plainfield-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-trafalgar",
+      "destination": "/trafalgar-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-trafalgar",
+      "destination": "/trafalgar-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-trafalgar",
+      "destination": "/trafalgar-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-westfield",
+      "destination": "/westfield-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-westfield",
+      "destination": "/westfield-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-westfield",
+      "destination": "/westfield-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-whitestown",
+      "destination": "/whitestown-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-whitestown",
+      "destination": "/whitestown-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-whitestown",
+      "destination": "/whitestown-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/standard-cleaning-zionsville",
+      "destination": "/zionsville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/deep-cleaning-zionsville",
+      "destination": "/zionsville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/move-out-cleaning-zionsville",
+      "destination": "/zionsville-house-cleaning",
+      "permanent": true
+    },
+    {
+      "source": "/areas",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/guides",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/christmas-lights",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/christmas-lights.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    }
+  ]
+}
