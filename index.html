@@ -49,10 +49,6 @@ a:focus-visible,button:focus-visible{outline:3px solid #C8F400;outline-offset:3p
 }
 @media (max-width: 480px){
   .nav-call-text{display:none}
-  .ticker{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px !important;font-size:15px !important;padding:16px !important}
-  .ticker > span{text-align:center;padding:10px 6px;border:1px solid #262626;border-radius:12px;background:#161616}
-  .ticker > span:last-child{grid-column:1 / -1}
-  .ticker > .tick-star{display:none}
   .cta-row > a{flex:1 1 100%;justify-content:center}
   .save-box{padding:20px !important}
   .save-box h3{font-size:26px !important}
@@ -61,7 +57,24 @@ a:focus-visible,button:focus-visible{outline:3px solid #C8F400;outline-offset:3p
   #rec-book{width:100%;text-align:center;padding:12px 20px !important}
   .book-row > div{flex-basis:100% !important}
 }
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.dup,.swipe-hint{display:none}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width: 700px){
+  .ticker-sec{overflow:hidden}
+  .ticker{display:flex !important;flex-wrap:nowrap !important;justify-content:flex-start !important;gap:0 !important;width:max-content !important;max-width:none !important;margin:0 !important;padding:16px 0 !important;font-size:17px !important;animation:tick 24s linear infinite}
+  .ticker > span{padding:0 12px;white-space:nowrap}
+  .ticker > .dup{display:inline}
+  .swipe{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:14px !important;margin:0 -24px;padding:4px 24px 12px;scroll-padding-inline:24px;scrollbar-width:none}
+  .swipe::-webkit-scrollbar{display:none}
+  .swipe > *{flex:0 0 84%;scroll-snap-align:start;min-width:0}
+  .swipe-hint{display:block;margin-top:-18px;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C8F400}
+  .promise-pup{padding:8px 24px 0 !important}
+  .promise-pup img{max-width:220px !important}
+  .cta-pup{padding:0 0 16px !important}
+  .cta-pup img{max-width:210px !important}
+  .cta-copy{padding:56px 0 8px !important}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.ticker{animation:none !important;overflow-x:auto}}
 </style>
 </head>
 <body>
@@ -118,13 +131,19 @@ Call Us Now
 </section>
 
 <!-- TRUST TICKER -->
-<section style="border-top: 1px solid #1F1F1F; border-bottom: 1px solid #1F1F1F; background: #0D0D0D">
+<section class="ticker-sec" style="border-top: 1px solid #1F1F1F; border-bottom: 1px solid #1F1F1F; background: #0D0D0D">
 <div class="ticker" style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 28px; font-family: 'Anton', 'Impact', sans-serif; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; color: #E8E8E8">
 <span>Fully Insured</span><span class="tick-star" style="color: #C8F400" aria-hidden="true">✦</span>
 <span>Flat Rate Pricing</span><span class="tick-star" style="color: #C8F400" aria-hidden="true">✦</span>
 <span>60-Second Estimate</span><span class="tick-star" style="color: #C8F400" aria-hidden="true">✦</span>
 <span>Re-Clean Guarantee</span><span class="tick-star" style="color: #C8F400" aria-hidden="true">✦</span>
 <span>Local Indy Crew</span>
+<span class="tick-star dup" style="color: #C8F400" aria-hidden="true">✦</span>
+<span class="dup" aria-hidden="true">Fully Insured</span><span class="tick-star dup" style="color: #C8F400" aria-hidden="true">✦</span>
+<span class="dup" aria-hidden="true">Flat Rate Pricing</span><span class="tick-star dup" style="color: #C8F400" aria-hidden="true">✦</span>
+<span class="dup" aria-hidden="true">60-Second Estimate</span><span class="tick-star dup" style="color: #C8F400" aria-hidden="true">✦</span>
+<span class="dup" aria-hidden="true">Re-Clean Guarantee</span><span class="tick-star dup" style="color: #C8F400" aria-hidden="true">✦</span>
+<span class="dup" aria-hidden="true">Local Indy Crew</span><span class="tick-star dup" style="color: #C8F400" aria-hidden="true">✦</span>
 </div>
 </section>
 
@@ -151,7 +170,8 @@ Call Us Now
 <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #9A9A9A">Our services</div>
 <h2 class="sec-h2" style="margin: 0; font-family: 'Anton', 'Impact', sans-serif; font-weight: 400; font-size: 72px; line-height: 0.95; text-transform: uppercase">Our award-winning <span style="color: #C8F400">services.</span></h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
+<div class="swipe-hint" aria-hidden="true">Swipe to see all 3 →</div>
+<div class="swipe" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
 <div style="background: #161616; border: 2px solid #C8F400; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 0 36px rgba(200, 244, 0, 0.15)">
 <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px">
 <div style="width: 56px; height: 56px; border-radius: 16px; background: #C8F400; color: #0D0D0D; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path><path d="M19 17l.7 1.8 1.8.7-1.8.7L19 22l-.7-1.8-1.8-.7 1.8-.7z"></path></svg></div>
@@ -256,7 +276,8 @@ Call Us Now
 <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #9A9A9A">Our work</div>
 <h2 class="sec-h2" style="margin: 0; font-family: 'Anton', 'Impact', sans-serif; font-weight: 400; font-size: 72px; line-height: 0.95; text-transform: uppercase">See the difference.</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<div class="swipe-hint" aria-hidden="true">Swipe for more →</div>
+<div class="swipe" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
 <figure style="margin: 0; position: relative; aspect-ratio: 768 / 503; border-radius: 22px; overflow: hidden; background: #161616; border: 1px solid #262626">
 <img loading="lazy" decoding="async" src="/assets/before-after-hallway.webp" alt="Hallway carpet before and after: heavy dark stains gone after cleaning" style="width: 100%; height: 100%; object-fit: cover; display: block">
 </figure>
@@ -284,7 +305,7 @@ Call Us Now
 <div style="display: flex; align-items: center; gap: 12px"><span style="color: #C8F400" aria-hidden="true">✦</span>Text updates if we're running late</div>
 </div>
 </div>
-<div style="flex: 0 1 460px; min-width: 0; align-self: flex-end; display: flex; justify-content: center; padding: 32px 24px 0">
+<div class="promise-pup" style="flex: 0 1 460px; min-width: 0; align-self: flex-end; display: flex; justify-content: center; padding: 32px 24px 0">
 <img loading="lazy" decoding="async" src="/assets/mascot-wave.webp" alt="The Novo's pup in his black Novo's polo, smiling and waving" style="width: 100%; max-width: 420px; height: auto; display: block">
 </div>
 </div>
@@ -308,7 +329,8 @@ Call Us Now
 </div>
 <a href="https://share.google/HyH6j83emFZup2dUk" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; border: 1.5px solid #3A3A3A; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase">See all reviews on Google</a>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<div class="swipe-hint" aria-hidden="true">Swipe for more reviews →</div>
+<div class="swipe" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
 <figure style="margin: 0; background: #161616; border: 1px solid #262626; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
 <div style="color: #C8F400; font-size: 16px; letter-spacing: 3px" role="img" aria-label="5 out of 5 stars">★★★★★</div>
 <blockquote style="margin: 0; font-size: 17px; line-height: 1.55; color: #FFFFFF; flex-grow: 1">"These people come in and out and leave your place looking splendid."</blockquote>
@@ -405,7 +427,7 @@ Call Us Now
 <!-- FINAL CTA -->
 <section style="background: #C8F400; color: #0D0D0D; overflow: hidden">
 <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px">
-<div style="flex: 1 1 480px; min-width: 0; padding: 72px 0; display: flex; flex-direction: column; gap: 22px; align-self: center">
+<div class="cta-copy" style="flex: 1 1 480px; min-width: 0; padding: 72px 0; display: flex; flex-direction: column; gap: 22px; align-self: center">
 <h2 class="big-h2" style="margin: 0; font-family: 'Anton', 'Impact', sans-serif; font-weight: 400; font-size: 84px; line-height: 0.92; text-transform: uppercase">A cleaner home<br>awaits.</h2>
 <p style="margin: 0; font-size: 18px; line-height: 1.5; color: #1F1F1F">See your price in 60 seconds. No payment, no commitment.</p>
 <div class="cta-row" style="display: flex; flex-wrap: wrap; gap: 12px">
@@ -419,7 +441,7 @@ Call Us Now
 </a>
 </div>
 </div>
-<div style="flex: 0 1 400px; min-width: 0; align-self: flex-end; display: flex; justify-content: center; padding: 28px 0 20px">
+<div class="cta-pup" style="flex: 0 1 400px; min-width: 0; align-self: flex-end; display: flex; justify-content: center; padding: 28px 0 20px">
 <img loading="lazy" decoding="async" src="/assets/mascot-mop.webp" alt="The Novo's pup in uniform, mopping the floor with a lime green mop" style="width: 100%; max-width: 380px; height: auto; display: block">
 </div>
 </div>
