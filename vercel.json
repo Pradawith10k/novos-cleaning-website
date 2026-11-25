@@ -3,6 +3,21 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/get/standard",
+      "destination": "/standard-cleaning?offer=switch-50-credit",
+      "permanent": false
+    },
+    {
+      "source": "/get/move-out",
+      "destination": "/move-out-cleaning?offer=free-hood-fridge",
+      "permanent": false
+    },
+    {
+      "source": "/get/deep",
+      "destination": "/deep-cleaning?offer=free-hood-fridge",
+      "permanent": false
+    },
+    {
       "source": "/standard-cleaning-avon",
       "destination": "/avon-house-cleaning",
       "permanent": true
