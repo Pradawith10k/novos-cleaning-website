@@ -38,6 +38,7 @@ a:focus-visible,summary:focus-visible{outline:3px solid #C8F400;outline-offset:3
 .faq[open] summary::after{content:'–'}
 .faq p{margin:0 0 18px;color:#BDBDB5;font-size:16px;line-height:1.6;max-width:760px}
 .sticky{display:none}
+.geo-pill[hidden],.geo-comma[hidden],.geo-yes[hidden]{display:none !important}
 @media (max-width:860px){
  .grid3{grid-template-columns:1fr}
  .h2{font-size:44px}
@@ -66,7 +67,8 @@ a:focus-visible,summary:focus-visible{outline:3px solid #C8F400;outline-offset:3
 <img src="https://images.unsplash.com/photo-1696986681606-b156ccd761c5?auto=format&fit=crop&q=80&w=1600" srcset="https://images.unsplash.com/photo-1696986681606-b156ccd761c5?auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1696986681606-b156ccd761c5?auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1696986681606-b156ccd761c5?auto=format&fit=crop&q=80&w=1600 1600w, https://images.unsplash.com/photo-1696986681606-b156ccd761c5?auto=format&fit=crop&q=80&w=2400 2400w" sizes="100vw" alt="" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%">
 <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(13,13,13,.38) 0%,rgba(13,13,13,.55) 60%,rgba(13,13,13,.72) 100%)"></div>
 <div class="hero-copy" style="position:relative;max-width:880px;padding:140px 24px 88px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px">
-<p class="eyebrow" style="margin:0;color:#FFF;text-shadow:0 1px 8px rgba(0,0,0,.6)">Deep clean · Indianapolis &amp; nearby</p>
+<p class="geo-pill" hidden style="margin:0;display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(13,13,13,.6);border:1px solid rgba(200,244,0,.6);font-size:14px;font-weight:700"><span style="width:8px;height:8px;border-radius:50%;background:#C8F400;box-shadow:0 0 10px #C8F400"></span><span>Now booking in <span class="geo-city"></span></span></p>
+<p class="eyebrow" style="margin:0;color:#FFF;text-shadow:0 1px 8px rgba(0,0,0,.6)">Deep clean · <span class="geo-area">Indianapolis &amp; nearby</span></p>
 <h1 class="hero-h1" style="margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:96px;line-height:.95;text-transform:uppercase;text-shadow:0 4px 30px rgba(0,0,0,.45)">Deep clean your home. <span style="color:#C8F400">Hood + fridge free.</span></h1>
 <p style="margin:0;max-width:640px;font-size:19px;line-height:1.6;text-shadow:0 1px 10px rgba(0,0,0,.6)">The grime on the stovetop, the dust on the baseboards, the stuff nobody gets to. We get all of it. Book a deep clean and we clean your range hood and the inside of your fridge on us.</p>
 <div class="cta-row" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;width:100%">
@@ -123,11 +125,11 @@ a:focus-visible,summary:focus-visible{outline:3px solid #C8F400;outline-offset:3
 <section class="sec"><div class="wrap" style="max-width:860px">
 <p class="eyebrow">FAQ</p>
 <h2 class="h2">Good to know.</h2>
-<details class="faq"><summary>Do you bring supplies?</summary><p>Yes. Our crew brings everything needed for the clean.</p></details><details class="faq"><summary>Do I need to be home?</summary><p>Nope. If you won't be there, just leave us a key or a door code.</p></details><details class="faq"><summary>When do I pay?</summary><p>After the clean. Your card is charged once the job is done.</p></details><details class="faq"><summary>How long does a deep clean take?</summary><p>Most homes take 3 to 6 hours depending on size and how much buildup there is. We give you a time estimate up front and text you if it runs longer.</p></details><details class="faq"><summary>Where do you clean?</summary><p>Indianapolis, Avon, Plainfield, Brownsburg, Zionsville, Carmel, Fishers, Westfield, Noblesville, McCordsville and Greenwood.</p></details>
+<details class="faq"><summary>Do you bring supplies?</summary><p>Yes. Our crew brings everything needed for the clean.</p></details><details class="faq"><summary>Do I need to be home?</summary><p>Nope. If you won't be there, just leave us a key or a door code.</p></details><details class="faq"><summary>When do I pay?</summary><p>After the clean. Your card is charged once the job is done.</p></details><details class="faq"><summary>How long does a deep clean take?</summary><p>Most homes take 3 to 6 hours depending on size and how much buildup there is. We give you a time estimate up front and text you if it runs longer.</p></details><details class="faq"><summary>Where do you clean?</summary><p><span class="geo-yes" hidden>Yes, we clean in <span class="geo-city"></span>. </span>We cover Indianapolis, Avon, Plainfield, Brownsburg, Zionsville, Carmel, Fishers, Westfield, Noblesville, McCordsville and Greenwood.</p></details>
 </div></section>
 
 <section class="sec" style="padding-bottom:96px"><div class="wrap" style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px">
-<h2 class="h2" style="margin:0;font-size:72px">Ready when <span style="color:#C8F400">you are.</span></h2>
+<h2 class="h2" style="margin:0;font-size:72px">Ready when <span style="color:#C8F400">you are<span class="geo-comma" hidden>, <span class="geo-city"></span></span>.</span></h2>
 <p style="margin:0;color:#BDBDB5;font-size:18px">See your price in 60 seconds. No card needed to get a quote.</p>
 <div class="cta-row" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;width:100%;max-width:640px">
 <a class="q" href="/quote.html?svc=Deep&offer=free-hood-fridge&lp=deep" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 30px;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;background:#C8F400;color:#0D0D0D;box-shadow:0 0 30px rgba(200,244,0,.45)">Get my deep clean price →</a>
@@ -146,6 +148,17 @@ a:focus-visible,summary:focus-visible{outline:3px solid #C8F400;outline-offset:3
 
 <script>
 (function(){
+  var AREA = ['Indianapolis','Avon','Plainfield','Brownsburg','Zionsville','Carmel','Fishers','Westfield','Noblesville','McCordsville','Greenwood','Speedway','Lawrence','Beech Grove','Whitestown'];
+  function match(c){ c=(c||'').replace(/[-_+]/g,' ').trim().toLowerCase(); if(c==='indy') c='indianapolis'; for(var i=0;i<AREA.length;i++) if(AREA[i].toLowerCase()===c) return AREA[i]; return ''; }
+  function show(c){
+    if(!c) return;
+    document.querySelectorAll('.geo-city').forEach(function(e){ e.textContent=c; });
+    document.querySelectorAll('.geo-area').forEach(function(e){ e.textContent=c+', IN'; });
+    document.querySelectorAll('.geo-pill,.geo-comma,.geo-yes').forEach(function(e){ e.hidden=false; });
+  }
+  var forced = match(new URLSearchParams(location.search).get('city'));
+  if(forced) show(forced);
+  else if(window.fetch) fetch('/api/geo').then(function(r){return r.json();}).then(function(g){ show(match(g.city)); }).catch(function(){});
   var s = new URLSearchParams(location.search);
   document.querySelectorAll('a.q').forEach(function(a){
     var u = new URL(a.getAttribute('href'), location.origin);
