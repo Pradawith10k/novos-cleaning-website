@@ -5,10 +5,10 @@
    - ADS_LEAD_LABEL / ADS_CALL_LABEL: the "Conversion label" for each conversion action (the part after the slash)
 */
 (function () {
-  var GA4_ID = '';          // e.g. 'G-ABC123XYZ9'
-  var ADS_ID = '';          // e.g. 'AW-123456789'
-  var ADS_LEAD_LABEL = '';  // conversion label for "Quote form submitted"
-  var ADS_CALL_LABEL = '';  // conversion label for "Phone number clicked"
+  var GA4_ID = 'G-JRV4ZMS8QX';          // e.g. 'G-ABC123XYZ9'
+  var ADS_ID = 'AW-18419077591';          // e.g. 'AW-123456789'
+  var ADS_LEAD_LABEL = 'Li-cCJjG-8AdENej885E';  // conversion label for "Quote form submitted"
+  var ADS_CALL_LABEL = 'gjE4CJvG-8AdENej885E';  // conversion label for "Phone number clicked"
 
   var on = !!(GA4_ID || ADS_ID);
 
