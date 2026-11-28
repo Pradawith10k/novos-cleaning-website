@@ -113,6 +113,7 @@ input::placeholder{color:#7A7A7A}
 .next:disabled{opacity:.7}
 @media (prefers-reduced-motion:reduce){.scene img{transition:none}.pulse{animation:none}}
 </style>
+<script src="/assets/track.js"></script>
 </head>
 <body>
 <div class="app">
@@ -555,6 +556,7 @@ function go(dir) {
     S.sending = true; render(false);
     send('submitted').then(function () {
       S.sending = false; S.page = 'done'; S.doneAt = Date.now(); S.tlSel = wantsSlot() ? 2 : 1;
+      try { var nt = window.novosTrack || (window.parent && window.parent !== window && window.parent.novosTrack); if (nt) nt('lead'); } catch (e) {}
       try { if (window.fbq) window.fbq('track', 'Lead'); else if (window.parent && window.parent !== window && window.parent.fbq) window.parent.fbq('track', 'Lead'); } catch (e) {}
       if (window.parent && window.parent !== window) { try { window.parent.postMessage({ type: 'novos-quote-submitted' }, '*'); } catch (e) {} }
       render(true);
